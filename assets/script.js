@@ -19,16 +19,14 @@ const slides = [
 
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
-const dots = document.querySelectorAll(".dot");
 const imageElement = document.querySelector(".banner-img");
 const taglineElement = document.querySelector(".tagline");
-
 let timerSlider = setInterval(timer, 3000);
 let i = 0;
 
 function linkDot(){
 	const link = document.getElementsByClassName("dot");
-	for (let i = 0; i < link.length; i++){
+	for (let i = 0; i < slides.length; i++){
 		link[i].classList.remove("dot_selected");		
 	}
 	link[i].classList.add("dot_selected");
