@@ -22,8 +22,8 @@ const arrowRight = document.querySelector(".arrow_right");
 const dots = document.querySelectorAll(".dot");
 const imageElement = document.querySelector(".banner-img");
 const taglineElement = document.querySelector(".tagline");
-const timerSlider = setInterval(timer, 3000);
 
+let timerSlider = setInterval(timer, 3000);
 let i = 0;
 
 function linkDot(){
@@ -37,7 +37,7 @@ function linkDot(){
 function showSlide() {
   imageElement.src = `./assets/images/slideshow/${slides[i].image}`;
   taglineElement.innerHTML = slides[i].tagLine;
-  linkDot(0);
+  linkDot();
 }
 
 function timer (){
@@ -55,6 +55,7 @@ arrowRight.addEventListener("click", function(){
     	i = 0;
   	}
   	showSlide();
+	timerSlider = setInterval(timer, 3000);
 });
 
 arrowLeft.addEventListener("click", function() {
@@ -64,5 +65,5 @@ arrowLeft.addEventListener("click", function() {
     	i = slides.length-1;
   	}
   	showSlide();
+	timerSlider = setInterval(timer, 3000);
 });
-
