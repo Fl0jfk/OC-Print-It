@@ -2,19 +2,19 @@
 
 const slides = [
 	{
-		"image":"slide1.jpg",
+		"image":"assets/images/slideshow/slide1.jpg",
 		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
 	},
 	{
-		"image":"slide2.jpg",
+		"image":"assets/images/slideshow/slide2.jpg",
 		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
 	},
 	{
-		"image":"slide3.jpg",
+		"image":"assets/images/slideshow/slide3.jpg",
 		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
 	},
 	{
-		"image":"slide4.png",
+		"image":"assets/images/slideshow/slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]										
@@ -42,7 +42,7 @@ function linkDot(){
 
 //Fonction montrant l'image et sa tagline selon la const slides ci-dessus, i reçoit sa valeur selon un timer et d'autres fonnctions 
 function showSlide() {
-  	imageElement.src = `./assets/images/slideshow/${slides[i].image}`;
+  	imageElement.src = slides[i].image;
   	taglineElement.innerHTML = slides[i].tagLine;
   	linkDot();
 }
@@ -69,7 +69,7 @@ arrowRight.addEventListener("click", function(){
 	timerSlider = setInterval(timer, 3000);
 });
 
-//Méthode déclenché par un click sur la class arrow_left, ajoute un +1 à i et retourne à 0 si elle dépasse le nombre de slide
+//Méthode déclenché par un click sur la class arrow_left, ajoute un -1 à i et retourne à taille tableau -1 si elle dépasse le nombre de slide
 arrowLeft.addEventListener("click", function() {
 	i--;
 	clearInterval(timerSlider);
